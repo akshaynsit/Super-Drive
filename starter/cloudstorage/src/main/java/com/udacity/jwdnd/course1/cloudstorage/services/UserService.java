@@ -2,6 +2,7 @@ package com.udacity.jwdnd.course1.cloudstorage.services;
 
 import com.udacity.jwdnd.course1.cloudstorage.mappers.UserMapper;
 import com.udacity.jwdnd.course1.cloudstorage.models.User;
+import com.udacity.jwdnd.course1.cloudstorage.models.UserVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -26,21 +27,21 @@ public class UserService {
         return this.userMapper.getUserByUsername(username) == null;
     }
 
-    public int createUser(User user){
+    public int createUser(UserVO userVO){
         SecureRandom random = new SecureRandom();
         byte[] salt = new byte[16];
 
         random.nextBytes(salt);
         String encodedSalt = Base64.getEncoder().encodeToString(salt);
-        String hashedPassword = hashService.getHashedValue(user.getPassword(), encodedSalt);
+        String hashedPassword = hashService.getHashedValue(userVO.getPassword(), encodedSalt);
 
         User newUser = new User(
                 null,
-                user.getUsername(),
+                userVO.getUsername(),
                 encodedSalt,
                 hashedPassword,
-                user.getFirstname(),
-                user.getLastname());
+                userVO.getFirstname(),
+                userVO.getLastname());
         return  userMapper.insert(newUser);
 
 

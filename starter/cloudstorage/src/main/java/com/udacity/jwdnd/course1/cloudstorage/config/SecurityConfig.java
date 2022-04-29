@@ -29,8 +29,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                         "/signup",
                         "/css/**",
                         "/js/**").permitAll().anyRequest().authenticated();
-
-        http.formLogin().loginPage("/login").permitAll();
+        //Back to login back if login not successful
+        http.formLogin().loginPage("/login").permitAll().failureUrl("/login.html?error=true");
 
         http.formLogin().defaultSuccessUrl("/home", true);
     }

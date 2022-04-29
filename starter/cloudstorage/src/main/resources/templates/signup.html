@@ -19,7 +19,7 @@
                     You successfully signed up! Please continue to the <a>login</a> page.
                 </div>
 
-                <div class="alert alert-danger" th:if="${not toSignUp} and ${not signupSuccessfully}">
+                <div class="alert alert-danger" th:if="${hasError}">
                     <span>Example Signup Error Message</span>
                 </div>
                 <form
