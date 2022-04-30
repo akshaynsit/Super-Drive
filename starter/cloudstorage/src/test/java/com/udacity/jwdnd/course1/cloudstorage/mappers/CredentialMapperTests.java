@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,8 +15,9 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringJUnitConfig(CloudStorageApplication.class)
+//@SpringJUnitConfig(CloudStorageApplication.class)
 //@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@MybatisTest
 public class CredentialMapperTests {
 
     private Logger logger = LoggerFactory.getLogger(CredentialMapperTests.class);

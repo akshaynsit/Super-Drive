@@ -5,6 +5,7 @@ import com.udacity.jwdnd.course1.cloudstorage.models.User;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
+import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringJUnitConfig(CloudStorageApplication.class)
 //@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+@MybatisTest
 public class UserMapperTests {
     private Logger logger = LoggerFactory.getLogger(UserMapperTests.class);
 
