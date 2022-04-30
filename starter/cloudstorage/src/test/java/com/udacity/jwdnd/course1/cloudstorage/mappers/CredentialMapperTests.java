@@ -15,7 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringJUnitConfig(CloudStorageApplication.class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CredentialMapperTests {
 
     private Logger logger = LoggerFactory.getLogger(CredentialMapperTests.class);
@@ -29,7 +29,7 @@ public class CredentialMapperTests {
         Credential newCredential = new Credential(
                 null,
                 "www.google.com",
-                "hello",
+                "hello1",
                 "sasfdasdfasdf#$#",
                 "worldsdfsdf");
 
@@ -54,7 +54,7 @@ public class CredentialMapperTests {
         Credential newCredential = new Credential(
                 null,
                 "www.google.com",
-                "hello",
+                "hello1",
                 "sasfdasdfasdf#$#",
                 "worldsdfsdf");
 

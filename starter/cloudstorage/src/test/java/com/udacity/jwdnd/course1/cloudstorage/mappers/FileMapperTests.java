@@ -2,11 +2,9 @@ package com.udacity.jwdnd.course1.cloudstorage.mappers;
 
 import com.udacity.jwdnd.course1.cloudstorage.CloudStorageApplication;
 import com.udacity.jwdnd.course1.cloudstorage.models.File;
-import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
-import org.junit.runners.MethodSorters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +15,14 @@ import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringJUnitConfig(CloudStorageApplication.class)
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class FileMapperTests {
 
     private Logger logger = LoggerFactory.getLogger(FileMapperTests.class);
 
     @Autowired
     private FileMapper fileMapper;
+
     @Test
     public void insertFile() {
 
